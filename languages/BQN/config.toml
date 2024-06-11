@@ -1,0 +1,15 @@
+name = "BQN"
+grammar = "bqn"
+path_suffixes = ["bqn"]
+line_comments = ["# "]
+autoclose_before = ")}]⟩"
+
+brackets = [
+    { start = "{", end = "}", close = true, newline = false },
+    { start = "[", end = "]", close = true, newline = false },
+    { start = "(", end = ")", close = true, newline = false },
+    { start = "⟨", end = "⟩", close = true, newline = false },
+    { start = "'", end = "'", close = true, newline = false },
+    { start = '"', end = '"', close = true, newline = false },
+    { start = "`", end = "`", close = true, newline = false },
+]
