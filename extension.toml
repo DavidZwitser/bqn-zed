@@ -1,0 +1,15 @@
+id = "BQN"
+name = "BQN"
+version = "0.0.1"
+schema_version = 1
+authors = ["David Zwitser <davidzwitser@gmail.com>"]
+description = "BQN language support for Zed"
+repository = "https://github.com/DavidZwitser/bqn-zed"
+
+[grammars.bqn]
+repository = "https://github.com/shnarazk/tree-sitter-bqn"
+commit = "8c62b746924398304c8fa1aa18393c3124d1e50d"
+
+[language_servers.bqn]
+name = "BQN Language Server"
+language = "BQN"
