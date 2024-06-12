@@ -1,46 +1,31 @@
-["·"] @constant.builtin
-["‿" "⟨" "⟩" "[" "]"] @operator
-["(" ")" "{" "}"] @punctuation.bracket
+; Basics
+[(nothing)] @constant.builtin ; ·
+[(string)] @string
+[(character)] @character
+[(number)] @number
+["⟨" "(" "{" "[" "]" "}" ")" "⟩"] @punctuation.bracket
+["?" ";" ":"] @keyword.conditional
+[(comment)] @comment
 
-[
-  ","
-  "?"
-  ";"
-  ":"
-  "⋄"
-  "⇐"
-  (ASGN)
-] @keyword.directive
+; System
+[(system_F)] @function ; System function
+[(system_s)] @variable ; System value
+[(system__m)] @type ; System 1 modifier
+[(system__c_)] @type ; System 2 modifier
 
-(comment) @comment
-["@" (character)] @character
-(number) @numeric
-(string) @string
+; User defined
+[(symbol_s)] @variable ; Text starting with lowercase
+[(symbol_F)] @function ; Text starting with uppercase
+[(symbol__m)] @type ; Custom 1-modifier
+[(symbol__c_)] @type ; Custom 2-modifier
 
-[
-  (specialname_s)
-  (symbol_sl)
-  (symbol_s)
-] @variable
+; Builtin
+[(symbol_Fl)] @operator ; Builtin function
+[(symbol__ml)] @type ; Builtin 1-modifiers
+[(symbol__cl_)] @type ; Builtin 2-modifiers
 
-[
-  (specialname_F)
-  "𝕊"
-  (symbol_Fl)
-  (symbol_F)
-  (system_F)
-] @function
-
-[
-  (specialname__m)
-  (symbol__ml)
-  (symbol__m)
-  (system__m)
-] @special
-
-[
-  (specialname__c_)
-  (symbol__cl_)
-  (symbol__c_)
-  (system__c_)
-] @special
+; Special names
+[(specialname_s)] @variable ; 𝕨𝕩𝕗𝕘𝕤
+[(specialname_F)] @function ; 𝕎𝕏𝔽𝔾𝕊
+[(specialname__m)] @type ; _𝕣
+[(specialname__c_)] @type ; _𝕣_

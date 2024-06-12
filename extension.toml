@@ -4,7 +4,7 @@ version = "0.0.1"
 schema_version = 1
 authors = ["David Zwitser <davidzwitser@gmail.com>"]
 description = "BQN language support for Zed"
-repository = "https://github.com/DavidZwitser/bqn-zed"
+repository = "https://github.com/DavidZwitser/zed-bqn"
 
 [grammars.bqn]
 repository = "https://github.com/shnarazk/tree-sitter-bqn"

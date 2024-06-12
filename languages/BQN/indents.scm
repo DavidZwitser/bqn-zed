@@ -1,7 +1,7 @@
 [
   (array)
-  ; (CASE_opt)
-  ; (CASE_end)
+  (CASE_opt)
+  (CASE_end)
   (GuardedSTMT)
   (HeadedBODY)
 ] @indent
@@ -32,15 +32,20 @@
   (#set! "scope" "all")
 )
 
-; (block
-;  (CASE_end
-;    (sep) @indent)
-;  @indent)
-; @indent
+(block
+ (CASE_end
+   (sep) @indent)
+ @indent)
+@indent
 
+(_ "[" "]" @end) @indent
+(_ "{" "}" @end) @indent
+(_ "⟨" "⟩" @end) @indent
+(_ "(" ")" @end) @indent
 
 [
   "}"
   "]"
   "⟩"
+  ")"
 ] @outdent

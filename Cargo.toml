@@ -1,5 +1,5 @@
 [package]
-name = "bqn-zed"
+name = "zed-bqn"
 version = "0.0.1"
 edition = "2021"
 
