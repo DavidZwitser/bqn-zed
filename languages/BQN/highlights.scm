@@ -1,31 +1,46 @@
 ; Basics
-[(nothing)] @constant.builtin ; ·
-[(string)] @string
-[(character)] @character
-[(number)] @number
-["⟨" "(" "{" "[" "]" "}" ")" "⟩"] @punctuation.bracket
+(nothing) @constant.builtin ; ·
+(string) @string
+(character) @character
+(number) @number
+["⟨" "(" "[" "]" ")" "⟩"] @punctuation.bracket
 ["?" ";" ":"] @keyword.conditional
-[(comment)] @comment
+["←" "↩" "{" "}"] @keyword
+["⇐"] @keyword.import
+(comment) @comment
 
 ; System
-[(system_F)] @function ; System function
-[(system_s)] @variable ; System value
-[(system__m)] @type ; System 1 modifier
-[(system__c_)] @type ; System 2 modifier
+(system_s) @variable ; System value
+(system_F) @function ; System function
+(system__m) @type ; System 1 modifier
+(system__c_) @type ; System 2 modifier
 
 ; User defined
-[(symbol_s)] @variable ; Text starting with lowercase
-[(symbol_F)] @function ; Text starting with uppercase
-[(symbol__m)] @type ; Custom 1-modifier
-[(symbol__c_)] @type ; Custom 2-modifier
+(atom (symbol_s)) @variable ; Free standing names
+(lhs (symbol_s)) @variable ; Names in headers
+(NAME) @variable ; Names in structures
+(LHS_ATOM) @variable ; A name in an array in a header
+(LHS_ENTRY) @variable ; A name in an array in a header
+
+(symbol_F) @function ; Text starting with uppercase
+(symbol__m) @type ; Custom 1-modifier
+(symbol__c_) @type ; Custom 2-modifier
+
+(atom (atom) @special) ; everything with a dot after it ending in a variable
+((atom) (symbol_F)) @special ; everything with a dot after it ending in a function
+; (HEAD (lhs (symbol_s))) @keyword
 
 ; Builtin
-[(symbol_Fl)] @operator ; Builtin function
-[(symbol__ml)] @type ; Builtin 1-modifiers
-[(symbol__cl_)] @type ; Builtin 2-modifiers
+(symbol_Fl) @operator ; Builtin function
+(symbol__ml) @type ; Builtin 1-modifiers
+(symbol__cl_) @type ; Builtin 2-modifiers
 
 ; Special names
-[(specialname_s)] @variable ; 𝕨𝕩𝕗𝕘𝕤
-[(specialname_F)] @function ; 𝕎𝕏𝔽𝔾𝕊
-[(specialname__m)] @type ; _𝕣
-[(specialname__c_)] @type ; _𝕣_
+(specialname_s) @variable ; 𝕨𝕩𝕗𝕘𝕤
+(specialname_F) @function ; 𝕎𝕏𝔽𝔾𝕊
+(HEAD ["𝕊"] @keyword)
+(HEAD ["𝔽" "𝔾"] @function)
+(HEAD ["𝕩" "𝕨"] @variable)
+
+(specialname__m) @type ; _𝕣
+(specialname__c_) @type ; _𝕣_
