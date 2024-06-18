@@ -1,13 +1,4 @@
-; Basics
-(nothing) @constant.builtin ; ·
-(string) @string
-(character) @character
-(number) @number
-["⟨" "(" "[" "]" ")" "⟩"] @punctuation.bracket
-["?" ";" ":"] @keyword.conditional
-["←" "↩" "{" "}"] @keyword
-["⇐"] @keyword.import
-(comment) @comment
+
 
 ; System
 (system_s) @variable ; System value
@@ -44,3 +35,15 @@
 
 (specialname__m) @type ; _𝕣
 (specialname__c_) @type ; _𝕣_
+
+; Basics
+(nothing) @constant.builtin ; ·
+(string) @string
+(character) @character
+(number) @number
+["?" ";" ":"] @keyword.conditional
+["←" "↩" "{" "}"] @keyword
+["⟨" "(" "[" "]" ")" "⟩"] @punctuation.bracket
+[","] @special ; Because there was a case when it highlighted wrongly
+["⇐"] @keyword.import
+(comment) @comment

@@ -1,4 +1,4 @@
-# BQN language support for [Zed](https://zed.dev/)
+# [BQN](https://mlochbaum.github.io/BQN/) language support for [Zed](https://zed.dev/)
 
 ## Prerequisites
 [BQN LSP](https://sr.ht/~detegr/bqnlsp/)
@@ -15,14 +15,36 @@ The syntax highlighting choices I've made.
 - `{ } : ; ← ↩ ⇐ `(`𝕊` in headers) are highlighted as `keywords` to make them stand as controllflow primitives.
 - In contrast with `𝕊`, `𝕩 𝕨 𝔽 𝔾 𝕤 _𝕣 _𝕣_` keep their syntactic coloring for readibility reasons in headers.
 
+## Features
+- Syntax highlighting
+- Outline support
+- Runnable blocks
+  - When you write a nameless block, a run button will apear next to it.
+  - You need `bqn` in your path in order to use this.
+- Hover documentation (powered by the lsp)
 
+## Gripes
+- Sadly system functions `•` aren't deconstructed in the tree-sitter grammar, that is why I can't do the `.` seperated notation highlighting.
+- The lsp, while very nice that we have it, could use features like `goto definition` or `refactoring` tools.
+- The LSP should download automatically. Now that needs to happen manually.
+- Hover highlighting doesn't always seem to work.
+- The extension doesn't support a \\ keyboard. That is sadly not possible for now in Zed.
 
 ## Making Zed BQN friendly
 Install the [BQN font](https://dzaima.github.io/BQN386/)
 And add it in your settings `"buffer_font_family": "BQN386 Unicode",`
 
-You can ofcourse also increase the font size
-`"buffer_font_size": 22,`
+These [tasks](https://zed.dev/docs/tasks) are nice to have
+```JSON
+{
+  "label": "BQN run line",
+  "command": "cat './${ZED_RELATIVE_FILE}' | head -n $ZED_ROW | tail -n 1 | bqn -r",
+},
+{
+  "label": "BQN run: $ZED_SELECTED_TEXT",
+  "command": "bqn -p '$ZED_SELECTED_TEXT'",
+}
+```
 
 If you use option/alt as your BQN modifier key, you can reclaim them:
 ```JSON

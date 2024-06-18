@@ -1,0 +1,9 @@
+[
+  {
+    "label": "bash BQN run",
+    "command": "bqn",
+    "args": ["-p", "$ZED_CUSTOM_bqn_run"],
+    "cwd": "$ZED_DIRNAME",
+    "tags": ["bqn-run"]
+  }
+]
