@@ -28,7 +28,6 @@ The syntax highlighting choices I've made.
 - The lsp, while very nice, could use features like `goto definition` or `refactoring` tools.
 - The LSP should download automatically. Now that needs to happen manually.
 - Hover documentation doesn't always seem to work.
-- The extension doesn't support a `\` keyboard. That is sadly currently not possible in Zed.
 
 ## Making Zed BQN friendly
 Install the [BQN font](https://dzaima.github.io/BQN386/)
