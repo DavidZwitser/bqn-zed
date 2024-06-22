@@ -2,7 +2,7 @@
 
 ## Prerequisites
 [BQN LSP](https://sr.ht/~detegr/bqnlsp/)
-should be installed in your path as `BQNLSP`!
+should be installed in your `$PATH` as `BQNLSP`!
 
 ## This uses
 - [bqnlsp](https://sr.ht/~detegr/bqnlsp/)
@@ -13,22 +13,22 @@ The syntax highlighting choices I've made.
 - Function glyphs are highlighted as `operators`, leaving `function` highlighting for user written functions.
 - 1- and 2-modifiers use `type` highlighting (since BQN doesn't specify types).
 - `{ } : ; ← ↩ ⇐ `(`𝕊` in headers) are highlighted as `keywords` to make them stand as controllflow primitives.
-- In contrast with `𝕊`, `𝕩 𝕨 𝔽 𝔾 𝕤 _𝕣 _𝕣_` keep their syntactic coloring for readibility reasons in headers.
+- In contrast with `𝕊`, `𝕩 𝕨 𝔽 𝔾 𝕤 _𝕣 _𝕣_` keep their syntactic coloring in headers for readibility reasons.
 
 ## Features
-- Syntax highlighting
-- Outline support
-- Runnable blocks
+- Syntax highlighting.
+- Outline support.
+- Runnable blocks.
   - When you write a nameless block, a run button will apear next to it.
   - You need `bqn` in your path in order to use this.
-- Hover documentation (powered by the lsp)
+- Hover documentation (powered by the lsp).
 
 ## Gripes
 - Sadly system functions `•` aren't deconstructed in the tree-sitter grammar, that is why I can't do the `.` seperated notation highlighting.
-- The lsp, while very nice that we have it, could use features like `goto definition` or `refactoring` tools.
+- The lsp, while very nice, could use features like `goto definition` or `refactoring` tools.
 - The LSP should download automatically. Now that needs to happen manually.
-- Hover highlighting doesn't always seem to work.
-- The extension doesn't support a `\` keyboard. That is sadly not possible for now in Zed.
+- Hover documentation doesn't always seem to work.
+- The extension doesn't support a `\` keyboard. That is sadly currently not possible in Zed.
 
 ## Making Zed BQN friendly
 Install the [BQN font](https://dzaima.github.io/BQN386/)
@@ -42,7 +42,7 @@ These [tasks](https://zed.dev/docs/tasks) might be nice to have
 },
 {
   "label": "BQN run line",
-  "command": "cat './${ZED_RELATIVE_FILE}' | head -n $ZED_ROW | tail -n 1 | bqn -r",
+  "command": "cat './${ZED_RELATIVE_FILE}' | head -n $ZED_ROW | tail -n 1 | bqn -p",
 },
 {
   "label": "BQN run $ZED_SELECTED_TEXT",
@@ -50,9 +50,9 @@ These [tasks](https://zed.dev/docs/tasks) might be nice to have
 }
 ```
 
-You can ofcourse write a task for running your specific project
+You can ofcourse also write a task for running your specific project.
 
-If you use option/alt as your BQN modifier key, you can reclaim them:
+If you use option/alt as your BQN modifier key, reclaim the keys in your keymap.json:
 ```JSON
 [
   {
