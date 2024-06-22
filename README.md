@@ -28,23 +28,29 @@ The syntax highlighting choices I've made.
 - The lsp, while very nice that we have it, could use features like `goto definition` or `refactoring` tools.
 - The LSP should download automatically. Now that needs to happen manually.
 - Hover highlighting doesn't always seem to work.
-- The extension doesn't support a \\ keyboard. That is sadly not possible for now in Zed.
+- The extension doesn't support a `\` keyboard. That is sadly not possible for now in Zed.
 
 ## Making Zed BQN friendly
 Install the [BQN font](https://dzaima.github.io/BQN386/)
 And add it in your settings `"buffer_font_family": "BQN386 Unicode",`
 
-These [tasks](https://zed.dev/docs/tasks) are nice to have
+These [tasks](https://zed.dev/docs/tasks) might be nice to have
 ```JSON
+{
+  "label": "BQN run file",
+  "command": "bqn -f '$ZED_FILE'"
+},
 {
   "label": "BQN run line",
   "command": "cat './${ZED_RELATIVE_FILE}' | head -n $ZED_ROW | tail -n 1 | bqn -r",
 },
 {
-  "label": "BQN run: $ZED_SELECTED_TEXT",
+  "label": "BQN run $ZED_SELECTED_TEXT",
   "command": "bqn -p '$ZED_SELECTED_TEXT'",
 }
 ```
+
+You can ofcourse write a task for running your specific project
 
 If you use option/alt as your BQN modifier key, you can reclaim them:
 ```JSON
